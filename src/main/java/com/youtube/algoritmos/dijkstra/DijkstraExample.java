@@ -4,7 +4,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 public class DijkstraExample {
+	private static Logger log = Logger.getLogger(DijkstraExample.class);
+	
     static final int V = 5; // Número de nodos en el grafo
 
     int minDistance(int dist[], Boolean sptSet[]) {
@@ -28,9 +32,9 @@ public class DijkstraExample {
         nodes.put(3, 'D');
         nodes.put(4, 'E');
 
-        System.out.println("Distancias mínimas desde el nodo fuente:");
+        log.debug("Distancias mínimas desde el nodo fuente:");
         for (int i = 0; i < V; i++)
-            System.out.println("Nodo " + nodes.get(i) + ": " + dist[i]);
+        	  log.debug("Nodo " + nodes.get(i) + ": " + dist[i]);
     }
 
     void dijkstra(int graph[][], int src) {
